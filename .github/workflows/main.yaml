@@ -112,4 +112,5 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
         env:
+        # In this way to can define terraform variables. Start with capital TF_VAR_
           TF_VAR_aws_region: ${{ secrets.AWS_REGION }}
